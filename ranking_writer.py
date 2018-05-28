@@ -30,9 +30,8 @@ driver.get("http://game.granbluefantasy.jp/")
 time.sleep(2.0)
 
 
-raw_str1 = r"" #総合騎空団ランキング用のフォルダ
-seed = r"" #予選シード用のフォルダ
-yosen = r"" #予選ランキング用のフォルダ
+raw_str1 = r"" #団ランキング用のフォルダ
+#ファイル名に日付をつける
 f = open(raw_str1+datetime.now().strftime("%Y%m%d %H%M%S")+'.csv','a',encoding='UTF-8-sig')
 f.write(datetime.now().strftime("%Y/%m/%d %H:%M:%S")+",,,,,"+"\n")
 
@@ -42,11 +41,8 @@ print(datetime.now().strftime("%Y/%m/%d %H:%M:%S"))
 for guild_id in range(1, 11):
 
     rn = random.uniform(1.15, 1.24)
-    #ランキングの切り替え用、本当はswitchとかで分岐したほうがいい気はする。
-    #normal http://game.granbluefantasy.jp/#event/teamraid038/ranking_guild/detail/
-    #seed http://game.granbluefantasy.jp/#event/teamraid038/ranking_seed/detail/
-    #total http://game.granbluefantasy.jp/#event/teamraid038/ranking/guild_total_detail
-    urls = "http://game.granbluefantasy.jp/#event/teamraid038/ranking/guild_total_detail/" + str(guild_id)
+    
+    urls = "" + str(guild_id)　#イベントランキングのURLを入力
     driver.get(urls)
     time.sleep(rn)
 
@@ -58,7 +54,7 @@ for guild_id in range(1, 11):
     div3 = link_soup.find_all('div', class_='txt-total-record')
     div4 = link_soup.find_all('div', class_='btn-ranking-profile')
 
-    #ページの1~10番目までの騎空団それぞれに対してのループ
+    #ページの1~10番目までの団それぞれに対してのループ
     for v in range(0, 10):
 
         #Rankと体を正規表現で消す
@@ -79,8 +75,6 @@ for guild_id in range(1, 11):
         #この時点でdiv2[v]とdiv3[2*v]はstringになっているので.textを付ける必要はない
         #結果の出力　足すだけ
         #guild_idはページ番号　
-        phrase = str((guild_id-1)*10+v+1)+",\""+div[v].text+"\",\""+div2[v]+"\",\""+div3[v]+ "\"," + div4[v]+",seed_38"
-        phrase2 = str((guild_id-1)*10+v+1)+",\""+div[v].text+"\",\""+div2[v]+"\",\""+div3[v]+ "\"," + div4[v]+",normal_38"
         phrase3 = str((guild_id-1)*10+v+1)+",\""+div[v].text+"\",\""+div2[v]+"\",\""+div3[v]+ "\"," + div4[v]+",guild_total_detail_38"
         print(phrase3)
         f.write(phrase3 +"\n")
