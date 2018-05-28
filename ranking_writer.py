@@ -26,7 +26,7 @@ driver.implicitly_wait(5)
 lists = ["detail", "member"]
 
 #1から1000までとりあえず様子見
-driver.get("http://game.granbluefantasy.jp/")
+driver.get("")　#一度ゲームのメイン画面を開く
 time.sleep(2.0)
 
 
