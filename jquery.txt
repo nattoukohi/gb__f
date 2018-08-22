@@ -18,3 +18,18 @@ $('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()+"\",\""+
 javascript:a='';a=$('.prt-battle-id').text();w=window.open();w.document.write(a);
 
 javascript:a='';a=$('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt-fix-name').eq(3).text()+"\",\""+$('.prt-fix-name').eq(4).text()+"\",\""+$('.prt-fix-name').eq(5).text()+"\",\""+$('.prt-fix-name').eq(6).text()+"\",\""+$('.prt-fix-name').eq(7).text();w=window.open();w.document.write(a);
+
+//戦闘中の参戦ID抽出・コピーも自動  source -> https://stackoverflow.com/questions/33855641/copy-output-of-a-javascript-variable-to-the-clipboard
+javascript:a='';a=$('.prt-battle-id').text();
+
+function copyToClipboard(text){
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute('value', text);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+copyToClipboard(a);
+
+
