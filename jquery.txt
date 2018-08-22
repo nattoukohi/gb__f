@@ -32,4 +32,16 @@ function copyToClipboard(text){
 }
 copyToClipboard(a);
 
+//戦闘中の参戦ID抽出・コピーも自動（一行）
+javascript:a='';a=$('.prt-battle-id').text();function copyToClipboard(text){var dummy = document.createElement("input");document.body.appendChild(dummy);dummy.setAttribute('value', text);dummy.select();document.execCommand("copy");document.body.removeChild(dummy);}copyToClipboard(a);
+
+//イベントマルチバトル
+http://game.granbluefantasy.jp/#quest/assist/event/1
+
+//普通のマルチバトル
+http://game.granbluefantasy.jp/#quest/assist/
+
+//ショートカットを決めて、それでjavascriptを起動すれば早いのでは
+https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/related
+
 
