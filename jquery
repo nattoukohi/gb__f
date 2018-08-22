@@ -1,0 +1,2 @@
+//フレンド石　火→水→…→フリー2の順番にしてるけど、設定してない石があると順番がずれる。
+$(location).attr('href')+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt-fix-name').eq(3).text()+"\",\""+$('.prt-fix-name').eq(4).text()+"\",\""+$('.prt-fix-name').eq(5).text()+"\",\""+$('.prt-fix-name').eq(6).text()+"\",\""+$('.prt-fix-name').eq(7).text()+"\",\""+$('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()
