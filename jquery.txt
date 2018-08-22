@@ -1,6 +1,10 @@
 //フレンド石　火→水→…→フリー2の順番にしてるけど、設定してない石があると順番がずれる。
 $(location).attr('href')+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt-fix-name').eq(3).text()+"\",\""+$('.prt-fix-name').eq(4).text()+"\",\""+$('.prt-fix-name').eq(5).text()+"\",\""+$('.prt-fix-name').eq(6).text()+"\",\""+$('.prt-fix-name').eq(7).text()+"\",\""+$('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()
 
+//フレンド石　詳細をクリックしてからじゃないと反応なし
+$('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt-fix-name').eq(3).text()+"\",\""+$('.prt-fix-name').eq(4).text()+"\",\""+$('.prt-fix-name').eq(5).text()+"\",\""+$('.prt-fix-name').eq(6).text()+"\",\""+$('.prt-fix-name').eq(7).text()
+
+
 シード団ランキング用
 (new Date().getHours())+":"+(new Date().getMinutes())+"\",\""+"1"+$('.txt-name').eq(0).text()+"\",\""+$('.txt-total-record').eq(0).text()+
 
@@ -10,3 +14,7 @@ $(location).attr('href')+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt
 下で団貢献度10個
 (new Date().getHours())+":"+(new Date().getMinutes())+"\","+"\n\""+$('.txt-total-record').eq(0).text()+"\","+"\n\""+$('.txt-total-record').eq(1).text()+"\","+"\n\""+$('.txt-total-record').eq(2).text()+"\","+"\n\""+$('.txt-total-record').eq(3).text()+"\","+"\n\""+$('.txt-total-record').eq(4).text()+"\","+"\n\""+$('.txt-total-record').eq(5).text()+"\","+"\n\""+$('.txt-total-record').eq(6).text()+"\","+"\n\""+$('.txt-total-record').eq(7).text()+"\","+"\n\""+$('.txt-total-record').eq(8).text()+"\","+"\n\""+$('.txt-total-record').eq(9).text()
 
+//戦闘中のID抽出
+javascript:a='';a=$('.prt-battle-id').text();w=window.open();w.document.write(a);
+
+javascript:a='';a=$('.prt-fix-name').eq(0).text()+"\",\""+$('.prt-fix-name').eq(1).text()+"\",\""+$('.prt-fix-name').eq(2).text()+"\",\""+$('.prt-fix-name').eq(3).text()+"\",\""+$('.prt-fix-name').eq(4).text()+"\",\""+$('.prt-fix-name').eq(5).text()+"\",\""+$('.prt-fix-name').eq(6).text()+"\",\""+$('.prt-fix-name').eq(7).text();w=window.open();w.document.write(a);
