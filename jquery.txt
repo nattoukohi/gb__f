@@ -45,3 +45,8 @@ http://game.granbluefantasy.jp/#quest/assist/
 https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/related
 
 
+//1000ms後にクリック
+setTimeout(()=>$('.btn-assist').trigger('tap'),1000)
+
+//IDボタンをクリック
+$('.btn-assist').trigger('tap')
